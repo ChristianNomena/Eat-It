@@ -12,15 +12,19 @@
         </header>
 
         <section>
-            <form method = "post" action = "../Controller/register.php">
+            <form method = "post" action = "../Model/register.php">
+                <input type = "text" name = "nom" id = "nom" placeholder = "Nom" required/>
+                <input type = "text" name = "prenom" id = "prenom" placeholder = "Prénom" required/>
+                <input type = "text" name = "adresse" id = "adresse" placeholder = "Adresse"/>
+                <input type = "text" name = "tel" id = "tel" placeholder = "Téléphone" minlength=13 maxlength=13/>
                 <input type = "text" name = "pseudo" id = "pseudo" placeholder = "Pseudo" required/>
                 <input type = "password" name = "mdp" id = "mdp" placeholder = "Mot de passe" required/>
-                <input type="submit" name="valider" id="valider" value="Se Connecter"/>
+                <input type = "submit" name = "valider" id="valider" value = "Créer un compte"/>
             </form>
         </section>
 
         <footer>
-            <p>Vous avez déjà un compte? <a href="login.php">Cliquez ici</a></p>
+            <p>Vous avez déjà un compte? <a href = "login.php">Cliquez ici</a></p>
         </footer>
     </body>
 </html>
