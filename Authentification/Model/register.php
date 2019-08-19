@@ -22,4 +22,6 @@
 
     $requeteRegister->execute();
     $requeteRegister->closeCursor();
+
+    header('location : ../View/login.php');
 ?>

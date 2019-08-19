@@ -31,6 +31,10 @@
             $_SESSION['mdp_connecter'] = $donneesLoginSession['mdp_cli'];
         }
         $requeteLoginSession->closeCursor();
-        echo("Connexion établie");
+        echo('Connexion établie');
+    }
+    else
+    {
+        header('location : ../View/login.php');
     }
 ?>

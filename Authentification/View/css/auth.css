@@ -1,0 +1,87 @@
+body
+{
+    background-image: url(../../Image/background.jpg);
+}
+
+.principale
+{
+    width: 30%;
+    margin: 4.2% 0 0 31%;
+    text-align: center;
+    box-shadow: 5px 5px 7.5px grey;
+    padding: 50px;
+}
+
+p
+{
+    color: gray;
+}
+
+#lien
+{
+    color: palevioletred;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.4s;
+}
+
+#lien:hover
+{
+    color: rgb(57, 112, 194);
+}
+
+.titre
+{
+    color: rgb(83, 74, 105);
+}
+
+.ligne
+{
+    width: 36%;
+    height: 2px;
+    background: linear-gradient(to right,orange, rgb(238, 72, 238));
+}
+
+.formulaire
+{
+    padding-top: 10px;
+}
+
+form input {
+    margin: 5% 0 10px 2%;
+    width: 91%;
+    padding: 2.4%;
+    font-size: 13.5px;
+    border-color: transparent;
+    border-bottom: 1px solid ;
+    position: relative;
+    color: grey;
+    caret-color: rgb(127, 164, 221);
+    transition: border ease 0.5s;
+}
+
+.remplir:hover{
+    border-bottom: 1.2px solid rgb(127, 164, 221);
+}
+
+.valider
+{
+    margin: 7.5% 0 0 2%;
+    width: 96.3%;
+    display: inline-block;
+    position: relative;
+    font-size: 17px;
+    color:whitesmoke;
+    font-weight: bold;
+    border-color:transparent;
+    padding: 10px;
+    background-color: rgba(207, 125, 207, 0.938);
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 1s;
+}
+
+.valider:hover
+{
+    background-color: rgb(57, 112, 194);
+    color: white;
+}
