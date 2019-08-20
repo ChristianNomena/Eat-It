@@ -6,10 +6,9 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset = "utf-8"/>
         <title>Eat it - Connexion</title>
         <link rel = "stylesheet" href = "css/auth.css"/>
-        <link rel = "stylesheet" href = "css/login.css"/>
     </head>
 
     <body>
@@ -24,19 +23,19 @@
                 <h1 class = "titre">Connexion</h1>
                 <hr class = "ligne"/>
                 <br/>
-                <p>Bienvenue dans Eat It! Commandez ce que vous voulez comme vous le voulez</p>
+                <p>Bienvenue dans Eat It! Connectez-vous pour voir les nouvelles</p>
             </div>
 
             <section class = "formulaire">
-                <form method = "post" action = "../Model/login.php">
-                    <input class = "remplir" type = "text" name = "pseudo" id = "pseudo" placeholder = "Pseudo" required/>
+                <form method = "post" action = "../Model/loginAdmin.php">
+                    <input class = "remplir" type = "email" name = "mail" id = "mail" placeholder = "E-mail" required/>
                     <input class = "remplir" type = "password" name = "mdp" id = "mdp" placeholder = "Mot de passe" required/>
                     <input class = "valider" type = "submit" name = "valider" id="valider" value = "Se Connecter"/>
                 </form>
             </section>
 
             <footer>
-                <p>Vous n'avez pas encore de compte? <a id = "lien" href = "register.php">Cliquez ici</a></p>
+                <p>Seuls les administrateurs ont accès à cette partie</p>
             </footer>
 
             <?php

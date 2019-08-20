@@ -10,6 +10,7 @@ body
     text-align: center;
     box-shadow: 7px 7px 9.5px grey;
     padding: 50px;
+    padding-bottom: 0;
 }
 
 p
