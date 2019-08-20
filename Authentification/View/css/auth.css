@@ -8,7 +8,7 @@ body
     width: 30%;
     margin: 4.2% 0 0 31%;
     text-align: center;
-    box-shadow: 5px 5px 7.5px grey;
+    box-shadow: 7px 7px 9.5px grey;
     padding: 50px;
 }
 
@@ -84,4 +84,15 @@ form input {
 {
     background-color: rgb(57, 112, 194);
     color: white;
+}
+
+.error
+{
+    display: inline-block;
+    position: relative;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: rgb(231, 39, 77);
+    margin: 10px 0 7.5% 0;
+    text-align: center;
 }

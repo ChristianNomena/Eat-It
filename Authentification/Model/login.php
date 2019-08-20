@@ -35,6 +35,6 @@
     }
     else
     {
-        header('location : ../View/login.php');
+        header('location: ../View/login.php?error=true');
     }
 ?>

@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -38,11 +43,11 @@
                 // ========================= Vérification d'erreur =========================
                 if(isset($_GET['error']))
                 {
-                    echo('<p id="error" style="visibility:visible">Veuillez vérifier les informations</p>');
+                    echo('<p class="error" style="visibility:visible" color="red">Veuillez vérifier toutes les informations entrées</p>');
                 }
                 else
                 {
-                    echo('<p id="error" style="visibility:hidden">Veuillez vérifier les informations</p>');
+                    echo('<p class="error" style="visibility:hidden">Veuillez vérifier toutes les informations entrées</p>');
                 }
             ?>
         </div>
