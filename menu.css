@@ -1,0 +1,58 @@
+body {
+	background-image: url("img/bloom.jpg");
+	background-repeat: no repeat;
+	background-size: 100%;
+}
+
+.image {
+	width: 100%;
+	height: 40%;
+}
+
+p{
+	padding: auto;
+}
+
+.menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 75%;
+	height: auto;
+}
+
+form{
+	display: inline;
+	width: 37%;
+	height: 33%;
+	margin: auto;
+	padding: auto;
+	border: 5px solid;
+	background-image: linear-gradient(to bottom right, #2eb8b8 ,#e600ac);
+	text-align: center;
+	box-shadow: 10px 10px 5px grey;
+}
+
+.menu .btn-commander{
+	background-color: #ffffff;
+	border: none;
+	font-size: 20px;
+	border-radius: 15px;
+	margin-top: 8px;
+}
+
+.menu .btn-commander:hover{
+	box-shadow: 6px 3px 8px 5px  #53332d;
+}
+
+.commande{
+	position: fixed;
+	background-color: white;
+	top: 15%;
+	right: 0;
+	height: 100%;
+	width: auto;
+	border: 3px solid;
+	text-align: center;
+}
