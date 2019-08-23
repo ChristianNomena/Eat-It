@@ -1,0 +1,46 @@
+body{
+    background-image: url(../../image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.formulaire{
+    padding-top: 10px;
+}
+
+.principale{
+    width: 30%;
+    text-align: center;
+    padding: 20%;
+    margin: 0 0 20px 25%;
+}
+
+form input {
+    margin: 5% 0 10px 2%;
+    width: 91%;
+    padding: 2.4%;
+    font-size: 13.5px;
+    border-color: transparent;
+    border-bottom: 1px solid ;
+    position: relative;
+    color: grey;
+    caret-color: rgb(127, 164, 221);
+    transition: border ease 0.5s;
+    background-color: transparent;
+}
+
+h1{
+    color: violet;
+}
+
+.Bouton{
+    padding: 10px;
+    margin-left: 5px;
+    margin-top: 50px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: violet;
+}
