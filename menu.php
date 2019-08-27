@@ -21,7 +21,7 @@
 			$a = 0;
 			$_SESSION['id_utilisateur']=1; //A changer par l'id de l'utilisateur
 			
-			if(!isset($_SESSION['nb_commande'])){
+			if(!isset($_SESSION['nb_commande'])){ //Met le nb_commande à 0 s'il n'y a pas encore de commande
 				$_SESSION['nb_commande'] = 0;
 			}
 			
@@ -29,20 +29,22 @@
 			$nom_plat = array();
 			$prix_plat = array();
 			
-			require("connexionBD.php"); //Affichage des plats
+			require("connexionBD.php");
 			$requete = $bdd->query("SELECT * FROM plat");
 			while ($plat = $requete->fetch()){ 
-			$_SESSION['id_plat'][$a] = $plat['id_plat']; //Récupération dans des sessions pour l'affichage dans commande
-			$_SESSION['nom_plat'][$a] = $plat['nom_plat'];
-			$_SESSION['prix_plat'][$a] = $plat['prix_plat'];
+				$_SESSION['id_plat'][$a] = $plat['id_plat']; //Récupération dans des sessions pour l'affichage dans commande
+				$_SESSION['nom_plat'][$a] = $plat['nom_plat'];
+				$_SESSION['prix_plat'][$a] = $plat['prix_plat'];
 		?>
-			<form method="POST" action="aff_commande.php">
-				<div class="plat"><h1><?php echo $plat['nom_plat'] ?></h1>
-				<img src="<?php echo $plat['image_plat'] ?>" class="image" alt="TSY MANDEHA">
-				<p><?php echo $plat['descri_plat'] ?></p>
-				<h2><?php echo $plat['prix_plat'] ?> Ar</h2>
-				<button name="commander" type="Submit" value="<?php echo $a ?>" class="btn-commander" target="_self">Commander</button></div>
-			</form>
+
+					<!--Affichage des plats-->
+				<form method="POST" action="aff_commande.php">
+					<div class="plat"><h1><?php echo $plat['nom_plat'] ?></h1>
+					<img src="<?php echo $plat['image_plat'] ?>" class="image" alt="TSY MANDEHA">
+					<p><?php echo $plat['descri_plat'] ?></p>
+					<h2><?php echo $plat['prix_plat'] ?> Ar</h2>
+					<button name="commander" type="Submit" value="<?php echo $a ?>" class="btn-commander" target="_self"><strong>Commander</strong></button></div>
+				</form>
 		<?php
 				$a = $a + 1;	
 			}
@@ -50,6 +52,7 @@
 		?>
 		</div>
 		
+
 		<form action="commander.php">
 		<div class="commande">
 			<h1>Votre commande</h1>
@@ -59,9 +62,8 @@
 				$_SESSION['plat']['total'] = 0;
 				if(isset($_SESSION['chiffre'])){
 					for($i=0; $i < $nb_com; $i++){
-						$_SESSION['plat']['total'] = $_SESSION['plat']['total'] + $_SESSION['plat']['prix'][$i];
-						?><h3><?php echo $_SESSION['plat']['nom'][$i];?></h3>
-						<h3><?php echo $_SESSION['plat']['prix'][$i];?> Ar</h3>
+						$_SESSION['plat']['total'] = $_SESSION['plat']['total'] + ($_SESSION['plat']['prix'][$i]*$_SESSION['plat']['Quantite'][$i]);?>
+						<h3>(<?php echo $_SESSION['plat']['Quantite'][$i].')'.$_SESSION['plat']['nom'][$i].'     '.$_SESSION['plat']['prix'][$i];?> Ar</h3>
 			<?php
 					}
 				}else{
@@ -69,7 +71,7 @@
 				}
 			?>
 			<h6>Total: <?php echo $_SESSION['plat']['total'];?> Ar</h6>
-			<button type="Submit">Valider</button>
+			<button class="btn_valider" type="Submit">Valider</button>
 		</div>
 		</form>
 	</div>

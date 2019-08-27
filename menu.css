@@ -18,7 +18,7 @@ p{
 	flex-flow: row wrap;
 	justify-content: center;
 	box-sizing: border-box;
-	width: 75%;
+	width: 65%;
 	height: auto;
 }
 
@@ -28,7 +28,6 @@ form{
 	height: 33%;
 	margin: auto;
 	padding: auto;
-	border: 5px solid;
 	background-image: linear-gradient(to bottom right, #2eb8b8 ,#e600ac);
 	text-align: center;
 	box-shadow: 10px 10px 5px grey;
@@ -37,13 +36,15 @@ form{
 .menu .btn-commander{
 	background-color: #ffffff;
 	border: none;
-	font-size: 20px;
+	font-size: 15px;
+	padding: 10px;
 	border-radius: 15px;
 	margin-top: 8px;
 }
 
 .menu .btn-commander:hover{
-	box-shadow: 6px 3px 8px 5px  #53332d;
+	box-shadow: 6px 3px 8px 5px  grey;
+	color: #000080;
 }
 
 .commande{
@@ -53,6 +54,34 @@ form{
 	right: 0;
 	height: 100%;
 	width: auto;
-	border: 3px solid;
+	border: 3px solid ;
 	text-align: center;
+	overflow: auto;
+}
+.commande h3,h6{
+	text-align: left;
+	margin-left: 5px;
+}
+
+.commande h3{
+	font-size: 100%;
+	font-family: Book Antiqua;
+}
+
+.btn_valider{
+	border: none;
+	float: right;
+	margin-right: 3px;
+	padding: 10px;
+	color: #ffffff;
+	background-color: #004466;
+}
+
+.btn_valider:hover{
+	background-image: radial-gradient(#0099e6, #b3e6ff);
+}
+
+.categorie{
+	float: left;
+	width: auto;
 }

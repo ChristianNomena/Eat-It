@@ -6,10 +6,17 @@
 	$id_user = $_SESSION['id_utilisateur'];
 	for($i=0; $i< $nb_com; $i++){
 		$id_plat = $_SESSION['plat']['id'][$i];
-		$req = $bdd->prepare("INSERT INTO commander VALUES($id_plat, $id_user, CURDATE())");
+		$qte = $_SESSION['plat']['Quantite'][$i];
+		$req = $bdd->prepare("INSERT INTO commander VALUES($id_plat, $id_user, NOW(), $qte)");
 		$req->execute()
 		or die(print_r($req->errorInfo(), TRUE));
-		$req->closeCursor();
+		$_SESSION['plat']['id'][$i] = NULL;
+		$_SESSION['plat']['nom'][$i] = NULL;
+		$_SESSION['plat']['prix'][$i] = NULL;
+		$_SESSION['plat']['Quantite'][$i] = NULL;
 	}
+	$req->closeCursor();
+	$_SESSION['chiffre'] = NULL;
+	$_SESSION['nb_commande'] = NULL;
 	header('location:menu.php');
 ?>
