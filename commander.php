@@ -7,7 +7,7 @@
 	for($i=0; $i< $nb_com; $i++){
 		$id_plat = $_SESSION['plat']['id'][$i];
 		$qte = $_SESSION['plat']['Quantite'][$i];
-		$req = $bdd->prepare("INSERT INTO commander VALUES($id_plat, $id_user, NOW(), $qte)");
+		$req = $bdd->prepare("INSERT INTO commander(id_plat,id_cli,date_commande,quantite) VALUES($id_plat, $id_user, NOW(), $qte)");
 		$req->execute()
 		or die(print_r($req->errorInfo(), TRUE));
 		$_SESSION['plat']['id'][$i] = NULL;

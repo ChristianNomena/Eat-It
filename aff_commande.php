@@ -6,7 +6,7 @@
 	$c = $_SESSION['chiffre'];
 	
 	//Regarde si le plat est déjà dans la commande
-	for($i=0; $i <= $c; $i++){
+	for($i=0; $i <= $b; $i++){
 		if($_SESSION['plat']['id'][$i] == $_SESSION['id_plat'][$c]){
 			$test = true;
 			$j = $i;//récupère où se trouve le plat dans le tableau 'plat'

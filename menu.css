@@ -68,6 +68,12 @@ form{
 	font-family: Book Antiqua;
 }
 
+.btn_supr{
+	background-color: red;
+	border-radius: 100%;
+	float: left;
+}
+
 .btn_valider{
 	border: none;
 	float: right;
