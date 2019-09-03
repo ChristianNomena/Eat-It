@@ -26,5 +26,5 @@
 		$_SESSION['nb_commande'] = $b + 1;
 	}
 
-	header('location:menu.php');
+	header('location:../View/menu.php');
 ?>

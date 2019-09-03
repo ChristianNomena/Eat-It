@@ -21,18 +21,17 @@
 			$nom_plat = array();
 			$prix_plat = array();
 			
-			require("connexionBD.php");
+			require("../Model/connexionBD.php");
 			$requete = $bdd->query("SELECT * FROM plat");
 			while ($plat = $requete->fetch()){ 
 				$_SESSION['id_plat'][$a] = $plat['id_plat']; //Récupération dans des sessions pour l'affichage dans commande
 				$_SESSION['nom_plat'][$a] = $plat['nom_plat'];
 				$_SESSION['prix_plat'][$a] = $plat['prix_plat'];
 		?>
-
 					<!--Affichage des plats-->
-				<form method="POST" action="aff_commande.php">
+				<form method="POST" action="../Model/aff_commande.php">
 					<div class="plat"><h1><?php echo $plat['nom_plat'] ?></h1>
-					<img src="<?php echo $plat['image_plat'] ?>" class="image" alt="TSY MANDEHA">
+					<img src="<?php echo '../'.$plat['image_plat'] ?>" class="image" alt="TSY MANDEHA">
 					<p><?php echo $plat['descri_plat'] ?></p>
 					<h2><?php echo $plat['prix_plat'] ?> Ar</h2>
 					<button name="commander" type="Submit" value="<?php echo $a ?>" class="btn-commander" target="_self"><strong>Commander</strong></button></div>
@@ -57,19 +56,20 @@
 					for($i=0; $i < $nb_com; $i++){ 
 						$_SESSION['plat']['total'] = $_SESSION['plat']['total'] + ($_SESSION['plat']['prix'][$i]*$_SESSION['plat']['Quantite'][$i]);
 			?>
-						<h3>(<?php echo $_SESSION['plat']['Quantite'][$i].')'.$_SESSION['plat']['nom'][$i].' '.$_SESSION['plat']['prix'][$i];?> Ar</h3>
-
-						<form method="Post" action="suppr.php">
+						<form method="Post" action="../Model/suppr.php">
 							<button type="Submit" name="btn_supr" value="<?php echo $i ?>" class="btn_supr">x</button>
 						</form>
+						<h3>(<?php echo $_SESSION['plat']['Quantite'][$i].')'.$_SESSION['plat']['nom'][$i].' '.$_SESSION['plat']['prix'][$i];?> Ar</h3>
 
-				<?php }
+				<?php
+					}
+
 				}else{
 					echo('Pas de commande!');
 				}
 				?>
 			<h6>Total: <?php echo $_SESSION['plat']['total'];?> Ar</h6>
-		<form action="commander.php">
+		<form method="Post" action="../Model/commander.php">
 			<button class="btn_valider" type="Submit">Valider</button>
 		</form>
 		</div>

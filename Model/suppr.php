@@ -9,6 +9,9 @@
         $_SESSION['plat']['prix'][$i] =  $_SESSION['plat']['prix'][$i+1];
         $_SESSION['plat']['Quantite'][$i] =  $_SESSION['plat']['Quantite'][$i+1];
     }
-    $_SESSION['nb_commande'] = $_SESSION['nb_commande'] - 1;
-    header('location:menu.php');
+    $_SESSION['nb_commande'] = $nb - 1;
+    if($_SESSION['nb_commande'] == 0){
+        $_SESSION['chiffre'] = NULL;
+    }
+    header('location:../View/menu.php');
 ?>
