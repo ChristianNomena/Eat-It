@@ -14,10 +14,11 @@
                                 <input type="text" name="nomPlat" placeholder="Nom du plat" required/>
                                 <input type="text" name="prixPlat" placeholder="Prix du plat" required/>
                                 <input type="text" name="categoriePlat" placeholder="Catégorie du plat" required/>
-                                <input type="text" name="descriPlat" placeholder="Description du plat" required/>
+                                <label>Description du plat</label><br><br>
+                                <textarea name="descriPlat"></textarea>
                                 <input type="file" name="imagePlat" placeholder="Image" required/>
 
-                                <button type="submit" class="">Ajouter le plat</button>
+                                <button type="submit" class="Bouton">Ajouter le plat</button>
                         </form>
         
                 </section>
