@@ -13,5 +13,5 @@
     if($_SESSION['nb_commande'] == 0){
         $_SESSION['chiffre'] = NULL;
     }
-    header('location:../View/menu.php');
+    header('location:../View/accueil.php');
 ?>

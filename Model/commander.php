@@ -18,5 +18,5 @@
 	$req->closeCursor();
 	$_SESSION['chiffre'] = NULL;
 	$_SESSION['nb_commande'] = NULL;
-	header('location:../View/menu.php');
+	header('location:../View/accueil.php');
 ?>
